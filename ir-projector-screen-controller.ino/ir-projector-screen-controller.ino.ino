@@ -27,10 +27,15 @@ void loop() {
     // Serial.println(results.value, HEX);
     // dump(&results);
     Serial.println(results.value, DEC);
-    Serial.println(results.value, HEX);
-    if(results.value == 1505153145) {
+    // Serial.println(results.value, HEX);
+    // These codes are what seems to work from Simple Remote's database of Benq projectors using IR Group 1. 
+    // Seems pretty reliable, more so that the actual Panasonic codes anyway.
+    // "Right" pad is 930455363, could use that to fine-tune or manual control down-slightly
+    // "Left" pad is 2524775321, could use that to fine-tune or manual control down-slightly
+    
+    if(results.value == 1590215105) {
       Serial.println("Projector power on!");
-    } else  if(results.value == 3766776354) {
+    } else  if(results.value == 2311607719) {
       Serial.println("Projector power off!");
     } else {
       Serial.println("Dunno brah!");
